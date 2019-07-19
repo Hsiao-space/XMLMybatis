@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 配置Log4j2 -->
+        <setting name="logImpl" value="LOG4J2"/>
+    </settings>
+
+    <!-- 数据源配置 -->
+    <environments default="myC3P0DataSource">
+        <!-- C3P0数据源 -->
+        <environment id="myC3P0DataSource">
+            <transactionManager type="JDBC"/>
+            <!-- new ComboPooledDataSource(),会默认加载c3p0.prperties配置文件 -->
+            <dataSource type="com.hsiao.factory.C3P0DataSource" />
+        </environment>
+    </environments>
+
+    <mappers>
+            <mapper resource="com/hsiao/entiy/TeacherVO.xml"/>
+    </mappers>
+</configuration>

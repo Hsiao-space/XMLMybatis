@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace属性赋值就是对象dao接口的全称 -->
+<mapper namespace="com.hsiao.dao.TeacherDao">
+
+    <resultMap type="com.hsiao.entiy.Teacher" id="teacherResult">
+        <id column="tid"  jdbcType="BIGINT" property="tid" />
+        <result column="tname"  jdbcType="VARCHAR" property="tname"/>
+        <result column="subject"  jdbcType="VARCHAR" property="subject"/>
+    </resultMap>
+
+    <select id="selectAllTeacher" resultMap="teacherResult">
+		SELECT TID,TNAME,SUBJECT FROM TEACHER
+    </select>
+</mapper>
